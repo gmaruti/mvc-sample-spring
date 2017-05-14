@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:dynamodb="http://docs.socialsignin.org/schema/data/dynamodb"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://docs.socialsignin.org/schema/data/dynamodb
+                           http://docs.socialsignin.org/schema/data/dynamodb/spring-dynamodb.xsd
+                           http://www.springframework.org/schema/mvc
+        				   http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd"
+	default-lazy-init="true">
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/> 
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:application.properties</value>
+		</property>
+	</bean>
+
+	
+	<mvc:annotation-driven />
+<!-- 	<mvc:default-servlet-handler /> 
+	<mvc:resources mapping="/resources/**" location="classpath:/static/" />-->
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		 <property name="prefix">
+			<value>/templates/</value>
+		</property>  
+		<property name="suffix">
+			<value>.html</value>
+		</property>
+	</bean>
+
+	 
+	<bean id="myController" class="com.maruti.mvc_sample.MyController">
+	</bean>
+
+
+</beans>
