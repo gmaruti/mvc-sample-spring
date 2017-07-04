@@ -24,7 +24,8 @@
 	<mvc:annotation-driven />
 <!-- 	<mvc:default-servlet-handler /> 
 	<mvc:resources mapping="/resources/**" location="classpath:/static/" />-->
-
+	
+	<mvc:resources mapping="/templates/**" location="classpath:/templates/" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		 <property name="prefix">

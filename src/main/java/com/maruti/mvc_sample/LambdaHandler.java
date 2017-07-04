@@ -1,7 +1,6 @@
  package com.maruti.mvc_sample;
  
 import org.springframework.web.context.support.XmlWebApplicationContext;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.amazonaws.serverless.exceptions.ContainerInitializationException;
 import com.amazonaws.serverless.proxy.internal.model.AwsProxyRequest;
